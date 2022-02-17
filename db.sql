@@ -1,6 +1,5 @@
 users
 
-
 INSERT INTO `users` (`uid`, `u_role`, `password`) VALUES ('21MX120', 'student', 'mca');
 INSERT INTO `users` (`uid`, `u_role`, `password`) VALUES ('1234', 'teacher', 'mca');
 INSERT INTO `users` (`uid`, `u_role`, `password`) VALUES ('1238', 'teacher', 'mca'),
@@ -11,9 +10,17 @@ INSERT INTO `users` (`uid`, `u_role`, `password`) VALUES ('1238', 'teacher', 'mc
 INSERT INTO `student` (`student_ID`, `student_name`, `student_course`, `student_semester`) VALUES ('21MX119', 'Nitihish', 'mx', '1'), ('21MX120', 'Rajesh', 'mx', '1');
 //
 //teacher
-INSERT INTO `teacher` (`teacher_ID`, `teacher_name`) VALUES ('1234', 'Sundar');
+INSERT INTO `teacher` (`teacher_ID`, `teacher_name`) VALUES ('C3250', 'Geetha N');
 INSERT INTO `teacher` (`teacher_ID`, `teacher_name`) VALUES ('1235', 'Dr.Chitra'), ('1236', 'Dr.Kalyani'), ('1237', 'Dr.Manavalan');
 INSERT INTO `teacher` (`teacher_ID`, `teacher_name`) VALUES ('1238', 'Dr.G.A.Vijayalakshmi Pai'), ('1239', 'Ms.K.Gayathri'), ('1240', 'Dr.N.Illayaraja');
+//
+
+//teacher subjects
+INSERT INTO `teachersubject` (`subject_ID`, `teacher_ID`) VALUES ('20MX11', 'C5234'), ('20MX18', 'C5234');
+INSERT INTO `teachersubject` (`subject_ID`, `teacher_ID`) VALUES ('20MX17', 'C574'), ('20MX15', 'C574'),
+ ('20MX14', 'C574'), ('20MX18', 'C3250');
+ INSERT INTO `teachersubject` (`subject_ID`, `teacher_ID`) VALUES ('20MX13', '1235'), ('20MX18', '1239'),
+  ('20MX15', '1236'), ('20MX18', '1236'), ('20MX12', '1237');
 //
 //subjects
 INSERT INTO `subjects` (`s_ID`, `s_name`, `s_teacherID`, `s_course`, `s_semester`) VALUES ('20MX11', 'MFCS', '1234', 'mx', '1'), ('20MX18', 'Web Application Development', '1234', 'mx', '1');
@@ -54,3 +61,5 @@ INSERT INTO `session` (`session_ID`, `session_day`, `session_course`, `session_s
 
 INSERT INTO `session` (`session_ID`, `session_day`, `session_course`, `session_semester`, `session_subject`) VALUES ('1', '6', 'mx', '1', 'Free'), ('2', '6', 'mx', '1', 'Free'), ('3', '6', 'mx', '1', '20MX18'), ('4', '6', 'mx', '1', '20MX18'),
    ('5', '6', 'mx', '1', 'Free'), ('6', '6', 'mx', '1', 'Free'), ('7', '6', 'mx', '1', 'Free');
+
+   INSERT INTO `users` (`uid`, `u_role`, `password`) VALUES ('C574', 'teacher', 'mca'), ('C52324', 'teacher', 'mca'), ('C3250', 'teacher', 'mca');

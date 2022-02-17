@@ -6,15 +6,12 @@ $userresult = mysqli_query($con,$usersql);
 $userrow = mysqli_fetch_array($userresult,MYSQLI_ASSOC);
 
 $subarray = array();
-$subsql = "select s_ID from subjects where s_teacherID = '$userid'  order by s_ID";
+$subsql = "select subject_ID from teachersubject where teacher_ID = '$userid'  order by subject_ID";
 $subresult = mysqli_query($con,$subsql);
-// if($subresult->num_rows>0){
-//     while($srow = $subresult->fetch_assoc()){
-//         array_push($subarray,$srow['s_ID']);
-//         printf("%s \n",$srow["s_ID"]);
-//     }
-//     //echo json_decode($subarray);
-// }
+
+$t_announ_sql = "select a_timestamp,announcement,subject_ID from announcement where teacher_ID = '$userid'";
+$t_announ_result = mysqli_query($con,$t_announ_sql);
+
 ?>
 <?php
     $selected = NULL;
@@ -37,7 +34,6 @@ $subresult = mysqli_query($con,$subsql);
                 array_push($stdarray,$stdrow['student_ID']);
                 printf(" %s \n",$stdrow["student_ID"]);
             }
-            //echo json_decode($subarray);
         }
     }
 ?>

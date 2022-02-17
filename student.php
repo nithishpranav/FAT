@@ -11,24 +11,38 @@ if(isset($_SESSION['uid'])){
     include("studentsubject.php");
     
     ?>
-    <!DOCTYPE html>
-    <html>
-    <style>
-        table, th, td {
-        border:1px solid black;
-        }
-    </style>
-
-    <head>
-        <title>HOME</title>
-        <link rel="stylesheet" type ="text/css" href="style1.css">
-    </head>
-    <body>
-        <h1><?php echo $row['student_name'];?> </h1>
-    </body >
-    
-    <button onclick="dayAppear()">Day</button>
-    <button onclick="weekAppear()">Week</button>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" type ="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1><?php echo $row['student_name'];?> </h1>
+</body >
+<div class="top">
+        <img src="https://1.bp.blogspot.com/-l_CBUtQxwRk/XmkkGnEuVZI/AAAAAAAA0zU/FpQtqOiERbgg9RiaHLCegQEY-UuLzlkZgCLcBGAsYHQ/s1600/images%2B%25282%2529.png" height="100%" width="6%">
+        <h1>PSG COLLEGE OF TECHNOLOGY</h1>
+</div>
+<div class="bottom">
+    <div class="sidebar">
+        <div class="info">
+            <h2><?php echo $row['student_name'];?></h2>
+            <h3><?php echo $row['student_ID'];?></h3>
+        </div>
+        <hr>
+        <a onclick="dayAppear()">Day</a>
+        <a  onclick="weekAppear()">Week</a>
+        <a onclick="subjectAppear()">Subjects</a>
+        <a onclick="tutorialAppear()">Exams</a>
+        <a onclick="announcementAppear()">Announcements</a>
+        <a href="logout.php">Logout<a>
+    </div>
+</div>
+<div class="center">
     <table id = "day">
         <tr>
         <td  id = "displayDateTime" rowspan="3"></td>
@@ -59,7 +73,7 @@ if(isset($_SESSION['uid'])){
         <td id = "d7"><?php echo $temparray[6];?></td>
         </tr>
     <table>
-
+</div>
     <table id = "week" style ="display: none;">
         <tr>
         <td rowspan="2">Days</td>
@@ -141,9 +155,8 @@ if(isset($_SESSION['uid'])){
         <td ><?php echo $weekarray[41];?></td>
         </tr>
     <table>
-    
-    <button onclick="subjectAppear()">Subject</button>
-    <div>
+
+<div>
     <table id = "subject"  style ="display: none;">
         <tr>
             <th>Subject ID</th>
@@ -160,16 +173,62 @@ if(isset($_SESSION['uid'])){
     <div>
     <?php
     }
-    include("studentExam.php");
-    ?>
-    </div>
 
-    </table>
+    include("studentExam.php");?>
     </div>
-    <script src = "student.js">
-        
-    </script>
-    <html>
+    <div>
+    <table id = "subject"  style ="display: none;">
+        <tr>
+            <th>Subject ID</th>
+            <th>Subject Name</th>
+        </tr>
+    </table>
+    <table id = "tutorial"  style ="display: none;">
+        <tr>
+            <th>Subject ID</th>
+            <th>Date</th>
+        </tr>
+    <?php
+    while($trow = $tutresult->fetch_assoc()){
+    ?>
+    <tr>
+        <td><?php echo $trow['tutorial_subject'];?></td>
+        <td><?php echo $trow['tutorial_date'];?></td>
+    </tr>
+
+    <?php
+    }
+    ?>
+    </table>
+<div id = "student_announcement" style ="display: none;">  
+    <?php
+        include("studentAnnouncement.php");
+    ?>
+    <table align="center">
+        <tr>
+            <td >Time</td>
+            <td >Subject</td>
+            <td >Annoucement</td>
+        </tr>
+        <?php
+        foreach($s_announ_res as $s_a_row){
+        ?>
+        <tr>
+            <td><?php echo $s_a_row['a_timestamp']?></td>
+            <td><?php echo $s_a_row['subject_ID']?></td>
+            <td><?php echo $s_a_row['announcement']?></td>
+        <tr>
+        <?php
+        }
+        ?>
+    </table>
+</div>
+</div>
+
+<script src = "student.js">
+    
+</script>
+<html>
     <?php
 
 }

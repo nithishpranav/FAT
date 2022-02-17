@@ -16,11 +16,22 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     // $sql = "Select s_name from subjects where s_ID in(Select session_subject from session where session_course = '$course'
     $sqlselect  = "Select session_subject from session where session_course = '$course'
      AND session_semester = '$semester' AND session_day = '$day' order by session_ID";
+
    $res = mysqli_query($con,$sqlselect); 
    if ($res->num_rows > 0){
         while($trow = $res->fetch_assoc()) 
         {            
             array_push($temparray, $trow["session_subject"]); //save your data into array
+        }
+    }
+    //$substitute_array = array();
+    $substitute_select = "Select substitute_subject,substitute_ID from substitute_session 
+    where substitute_course = '$course' and substitute_semester = '$semester' order by substitute_ID";
+    $substitute_result = mysqli_query($con,$substitute_select);
+    if($substitute_result->num_rows>0){
+        while($substitute_row = $substitute_result->fetch_assoc()){
+            $temparray[$substitute_row["substitute_ID"]-1] = $substitute_row["substitute_subject"];
+            //echo $substitute_row["substitute_ID"];
         }
     }
 

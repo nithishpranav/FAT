@@ -12,10 +12,8 @@ s_ID from subjects where s_course = '$course' and s_semester = '$semester')";
 
 $tutresult = mysqli_query($con,$tutsql);
 if($tutresult->num_rows>0){
-
 }
 else{
     echo 'No upcoming tutorials';
 }
-
 ?>

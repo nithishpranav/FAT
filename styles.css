@@ -1,0 +1,149 @@
+.top{
+    width: 100%;
+    background-color: rgb(42, 93, 187);
+    height: 15%;
+    margin-bottom: 50px;
+    padding: 30;
+    position: absolute;
+    top: 0%;
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+select {
+  margin-bottom: 1em;
+  padding: .25em;
+  border: 2px solid black;
+  
+  font-size: 20px;
+
+  font-weight: bold;
+  
+  border-radius: 0;
+}
+input{
+  margin-bottom: 1em;
+  padding: .25em;
+  border: 2px solid black;
+  
+  font-size: 20px;
+
+  font-weight: bold;
+  
+  border-radius: 0;
+}
+
+h1{  
+    text-align: left;  
+    color: whitesmoke;  
+    padding: 20px; 
+    font-size: 250%;
+    position: absolute;
+    left: 100px;
+    top: -30px;
+}
+/* .left{
+    background-color: rgb(156, 143, 229);
+}*/
+.center{
+    background-color: rgb(245, 245, 245);
+    padding: 250px; 
+    margin-left: 150px;
+    text-align: center;
+    font-size: 30px;
+    
+} 
+select{
+  font-size: 20px;
+
+}
+
+table, th, td {
+  font-size: 20px;
+
+  font-weight: bold;
+
+  border:1px solid black;
+  width: auto;
+  
+  }
+  form{
+    margin: auto; width: 320px;
+  }
+h2{
+    align:center;
+    background-color: rgb(42, 93, 187);
+    color: whitesmoke;
+    padding: 10% 4%;
+    margin: 0%;
+}
+h3{
+    align: center;
+    background-color: rgb(42, 93, 187);
+    color: whitesmoke;
+    padding: 10% 4%;
+    margin: 0%;
+}
+.info{
+  background-color: rgb(42, 93, 187);
+}
+.sidebar {
+    margin-top: 9.45%;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: rgb(223, 164, 112);
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: rgb(46, 168, 93);
+    color: whitesmoke;
+  }
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+    align:center;
+  }
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  
+
+  

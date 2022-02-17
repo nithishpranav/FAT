@@ -10,9 +10,9 @@ $dayName=date("D", strtotime($date));
 $day = date("w", strtotime("$dayName")); 
 
 $dayarray = array();
-
-$daysql = "select session_subject,session_ID from session where session_day = '$day' and session_subject in
-(select s_ID from subjects where s_teacherID = '$userid')";
+$daysql = "select session_subject,session_ID from session where session_day = '$day' and session_subject in(select subject_ID from teachersubject where teacher_ID = '$userid')";
+//$daysql = "select session_subject,session_ID from session where session_day = '$day' and session_subject in
+///(select s_ID from subjects where s_teacherID = '$userid')";
 $dayresult = mysqli_query($con,$daysql);
 if($dayresult->num_rows>0){
     $i = 1;
@@ -30,4 +30,16 @@ if($dayresult->num_rows>0){
     }
     //echo json_encode($dayarray);
 }
-?>
+
+//
+
+// $weekarray = array();
+// $weeksql = "select session_subject,session_ID from session where session_subject in (select  subject_ID from teachersubject where teacher_ID = '$userid') order by session_day,session_ID";
+// $weekresult = mysqli_query($con,$weeksql);
+// for($j = 0;$j<6;$j++){
+//     $wrow = $weekresult->fetch_assoc();
+//     for($i = 0;$i<7;$i++){
+//         if(strcmp(strval($i));
+//     }
+// }
+// ?>

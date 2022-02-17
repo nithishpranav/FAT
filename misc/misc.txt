@@ -18,3 +18,9 @@
         var today = new Date();
         var day = today.getDay();
         </script>'; 
+
+            <!-- <option value='{"subject-opt":"<?php echo $srow_opt['session_subject'];?>",
+                    "session-opt":"<?php echo $srow_opt['session_ID'];?>"'> 
+          <?php echo $srow_opt['session_subject']," ",$srow_opt['session_ID'];?> </option> -->
+
+<option value="<?php echo $sub["s_ID"]; ?>"><?php echo $sub["s_ID"]; ?></option>

@@ -1,5 +1,6 @@
 <?php      
     session_start();
+    //db connection
     include('connection.php');  
     $userid = $_POST['user'];  
     $password = $_POST['pass'];  
